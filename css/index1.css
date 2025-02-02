@@ -21,12 +21,27 @@
   position: relative;
   flex: 0 0 32%;
   background-color: var(--headerCOlor);
-  min-height: 200px;
+  min-height: 150px;
   text-align: center;
   border-radius: 10px;
   padding: 30px 20px;
   box-sizing: border-box;
 
+}
+
+/* 媒体查询，当屏幕宽度小于 950px 时应用以下样式 */
+@media (max-width: 950px) {
+  .content-li.li1 {
+    /* 将 flex 布局改为纵向排列 */
+    flex-direction: column;
+  }
+
+  .content-li.li1 > .li1-box {
+    /* 让每个元素宽度占满父容器 */
+    flex: 0 0 100%;
+    /* 增加元素之间的间距 */
+    margin-bottom: 20px;
+  }
 }
 
 .li1-box>span {
@@ -113,12 +128,15 @@
 /* 第三段 */
 .li3-box {
   position: relative;
-  min-height: 600px;
+  /* 设置高度为 0，以便使用 padding 技巧 */
+  height: 0;
+  /* 按照 3:2 的比例，padding-top 为宽度的 66.67% */
+  padding-top: 66.67%; 
   background-image: url("../img/videoback.jpg");
   background-size: 100%;
 }
 
-.li3-box>.play-buttom {
+.li3-box > .play-buttom {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -132,7 +150,6 @@
   text-align: center;
   font-weight: bold;
   font-size: 30px;
-
 }
 
 .play-buttom::after {
@@ -154,7 +171,6 @@
     opacity: 1;
     transform: scale(0.9);
   }
-
   to {
     opacity: 0;
     transform: scale(1.5);
@@ -163,6 +179,14 @@
 
 .play-buttom svg {
   vertical-align: -13px;
+}
+
+/* 媒体查询，确保在不同屏幕尺寸下都生效 */
+@media (max-width: 950px) {
+  .li3-box {
+    height: 0;
+    padding-top: 66.67%; 
+  }
 }
 
 /* 第四 */
@@ -293,7 +317,7 @@ svg {
 }
 
 /* 第六个 */
-.content-li.li6 {}
+.content-li.li6 
 
 .li6-box {
   display: flex;
@@ -387,6 +411,21 @@ svg {
   letter-spacing: 2px;
   border-radius: 20px;
   padding: 0 30px;
+}
+
+/* 媒体查询，当屏幕宽度小于 950px 时应用以下样式 */
+@media (max-width: 950px) {
+  .li7boxitem {
+    /* 将 flex 布局改为纵向排列 */
+    flex-direction: column;
+  }
+
+  .li7boxitem {
+    /* 让每个元素宽度占满父容器 */
+    flex: 0 0 100%;
+    /* 增加元素之间的间距 */
+    margin-bottom: 20px;
+  }
 }
 
 
