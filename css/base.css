@@ -258,7 +258,7 @@ img {
   background-color: transparent;
   height: 600px;
   border-radius: 20px;
-  background-image: url("../img/back/a58cbbffd2aa49c1b1e99990be912f30.jpg");
+  background-image: url("../img/back/aitx6-0og08.webp");
   background-attachment: fixed;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -364,14 +364,15 @@ img {
 
 .scroll {
   position: fixed !important;
-  top: 49%;
+  top: 45%;
+  transform: translateY(-50%);
 }
 
 .content .me-card {
   width: fit-content;
   min-width: 285px;
-  transform: translateY(-351px);
-  height: 780px;
+  transform: translateY(-35%);
+  height: 600px;
   /* backgrounbad-color: var(--headerCOlor); */
   border-radius: 10px;
   text-align: center;
