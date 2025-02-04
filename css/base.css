@@ -371,7 +371,7 @@ img {
   width: fit-content;
   min-width: 285px;
   transform: translateY(-35%);
-  height: 600px;
+  height: 585px;                                  /* 左侧浮框高度  */
   /* backgrounbad-color: var(--headerCOlor); */
   border-radius: 10px;
   text-align: center;
@@ -526,7 +526,7 @@ img {
 }
 
 
-/* g公共 */
+/* 公共 */
 .content-li>h3 {
   display: flex;
   align-items: center;
