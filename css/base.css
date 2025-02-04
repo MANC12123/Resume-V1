@@ -54,14 +54,14 @@ svg path {
   fill: #FCFCFE;
 }
 
-#videoResume {
+#videoskill {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-#videoResumeC {
+#videoskillC {
   width: 100%;
 }
 
