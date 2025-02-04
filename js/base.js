@@ -119,17 +119,17 @@ $('#minmenu').click(function () {
 
   
   
-  // loadding
+  // loading
   document.onreadystatechange = function () {
     if (document.readyState == 'complete') {
-      let opacity = $('.lodding-wrap').css('opacity');
+      let opacity = $('.loading-wrap').css('opacity');
       let timer = null;
       timer = opacity&&setInterval(() => {
         opacity-=0.1
-        $('.lodding-wrap').css('opacity', opacity);
+        $('.loading-wrap').css('opacity', opacity);
         console.log(opacity)
         if (opacity <= 0) {
-          $('.lodding-wrap').css('display','none');
+          $('.loading-wrap').css('display','none');
           clearInterval(timer)
         }
       }, 100);
@@ -148,3 +148,22 @@ $('#minmenu').click(function () {
               })
             }
 })()
+// 建议放在页面底部</body>标签前，或DOMContentLoaded事件中
+document.addEventListener('DOMContentLoaded', function() {
+  // 等待所有资源加载完成
+  window.addEventListener('load', function() {
+    const loader = document.querySelector('.loading-wrap');
+    if (!loader) return;
+
+    // 使用requestAnimationFrame确保样式应用
+    requestAnimationFrame(() => {
+      // 添加隐藏类名触发淡出过渡
+      loader.classList.add('hide');
+      
+      // 过渡结束后移除元素
+      setTimeout(() => {
+        loader.remove();
+      }, 300); // 这个时间需匹配CSS的transition时长(0.3s)
+    });
+  });
+});

@@ -540,70 +540,76 @@ img {
 }
 
 
-/* 加载小蝴蝶 */
-.lodding-wrap {
+/* 加载小蝴蝶 - 修正版 */
+.loading-wrap {
   position: fixed;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  top: 0px;
-  background-color: rgba(0, 0, 0, 0.95);
-  z-index: 9;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
   opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
-.loadding-div {
+/* 隐藏状态 */
+.loading-wrap.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-div {
+  position: absolute;
   left: 50%;
   top: 50%;
-  position: relative;
   width: 100px;
   height: 100px;
-  transform: rotateZ(-13deg) translate(-50%, -50%);
-  animation: insect-fly 0.3333333333s infinite alternate cubic-bezier(.45, -0.43, .63, 1.94);
+  transform: translateZ(0) rotateZ(-13deg) translate(-50%, -50%);
+  animation: insect-fly 0.333s infinite alternate cubic-bezier(.45, -0.43, .63, 1.94);
 }
 
-.loadding-div::after,
-.loadding-div::before {
+.loading-div::after,
+.loading-div::before {
   content: '';
   position: absolute;
   width: 50px;
   height: 50px;
   border: 1px solid #00c7ff;
-  transform: rotateX(60deg) rotateY(-60deg);
-  background-color: rgba(81, 0, 255, 0.723);
+  background: rgba(81, 0, 255, 0.723);
   border-radius: 40% 20% 50% 50%;
+  transform: rotateX(60deg) rotateY(-60deg);
   animation: wings 0.333s infinite cubic-bezier(0.6, 0, 0.4, 1) alternate;
+  will-change: transform;
 }
 
-.loadding-div::after {
+.loading-div::after {
   transform-origin: right center;
   left: 0;
 }
 
-.loadding-div::before {
+.loading-div::before {
   right: 0;
   transform-origin: left center;
   animation-direction: alternate-reverse;
 }
 
-@keyframes insect-fly {
-  from {
-    margin-top: -0.3em;
-  }
+/* 隐藏时停止动画 */
+.loading-wrap.hide .loading-div,
+.loading-wrap.hide .loading-div::before,
+.loading-wrap.hide .loading-div::after {
+  animation: none !important;
+}
 
-  to {
-    margin-top: 0.3em;
-  }
+@keyframes insect-fly {
+  from { margin-top: -0.3em; }
+  to { margin-top: 0.3em; }
 }
 
 @keyframes wings {
-  from {
-    transform: rotateX(60deg) rotateY(-60deg);
-  }
-
-  to {
-    transform: rotateX(60deg) rotateY(60deg);
-  }
+  from { transform: rotateX(60deg) rotateY(-60deg); }
+  to { transform: rotateX(60deg) rotateY(60deg); }
 }
 
 /* 雪花 */
