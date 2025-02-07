@@ -171,6 +171,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+/*优化浮框*/
 // 监听窗口的滚动事件
 window.addEventListener('scroll', function() {
   // 获取左侧浮框元素
@@ -187,3 +189,48 @@ window.addEventListener('scroll', function() {
   }
 });
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // 获取播放按钮元素
+  const playButton = document.getElementById('playbuttom');
+  // 获取关闭按钮元素
+  const closeButton = document.querySelector('.zhezhao .close');
+  // 获取遮罩层元素
+  const overlay = document.getElementById('zhezhao');
+  // 获取视频元素
+  const video = document.getElementById('videoskillC');
+  // 获取视频容器元素
+  const videoContainer = document.getElementById('videoskill');
+
+  // 为播放按钮添加点击事件监听器
+  playButton.addEventListener('click', function () {
+      // 显示遮罩层
+      overlay.style.display = 'block';
+      // 设置视频容器样式，使其占据整个遮罩层
+      videoContainer.style.width = '100%'; // 可根据需要调整宽度
+      videoContainer.style.maxWidth = '1200px'; // 最大宽度限制
+      videoContainer.style.height = 'auto';
+      videoContainer.style.position = 'absolute';
+      videoContainer.style.top = '50%';
+      videoContainer.style.left = '50%';
+      videoContainer.style.transform = 'translate(-50%, -50%)';
+
+      // 设置视频样式，使其适应容器
+      video.style.width = '100%';
+      video.style.height = 'auto';
+
+      // 播放视频
+      video.play();
+  });
+
+  // 为关闭按钮添加点击事件监听器
+  closeButton.addEventListener('click', function () {
+      // 隐藏遮罩层
+      overlay.style.display = 'none';
+      // 暂停视频
+      video.pause();
+      // 将视频播放进度重置为开始位置
+      video.currentTime = 0;
+  });
+});
