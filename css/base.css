@@ -28,6 +28,21 @@ svg path {
   fill: var(--headerFont);
 }
 
+/* 左对齐 */
+.left-align {
+  text-align: left;
+}
+
+/* 居中对齐 */
+.center-align {
+  text-align: center;
+}
+
+/* 右对齐 */
+.right-align {
+  text-align: right;
+}
+
 /* 遮罩 */
 .zhezhao {
   position: fixed;
@@ -358,16 +373,6 @@ img {
 
 /* 左半部分 */
 .content .me-card {
-  /* top: 390px; */
-}
-
-.scroll {
-  position: fixed !important;
-  top: 45%;
-  transform: translateY(-50%);
-}
-
-.content .me-card {
   width: fit-content;
   min-width: 285px;
   transform: translateY(-35%);
@@ -377,14 +382,20 @@ img {
   text-align: center;
   border: 1px solid var(--headerCOlor);
   padding: 0px 30px;
+  /* 添加过渡效果，让 top 和 transform 属性变化更平滑 */
+  transition: top 0.3s ease, transform 0.3s ease;
 }
 
+.scroll {
+  position: fixed !important;
+  top: 45%;
+  transform: translateY(-50%);
+}
 
 /* 左边吸盘 */
 .mecar-title {
   margin-top: 40px;
 }
-
 
 .me-hover span {
   margin: 0 auto;
@@ -397,7 +408,6 @@ img {
   overflow: hidden;
   animation: typing 3s steps(28, end), blink-caret .3s step-end infinite alternate;
 }
-
 
 @keyframes typing {
   from {
@@ -868,7 +878,7 @@ img {
 }
 
 /* 平板 */
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1500px) {
   .navigation {
     text-align: center;
     background-size: 100% 100%;

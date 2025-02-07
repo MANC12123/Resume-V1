@@ -138,15 +138,18 @@ $('#minmenu').click(function () {
   }
 
   
+ //锚点定位初始化
+ function bindEvenInit(){
+  $('.navbtn').bind("click touch",function () {
+    //scrollTop 滚动到  $(this).attr('href')锚点关联id所在位置
+    $('html,body').animate({scrollTop:($($(this).attr('href')).offset().top-100)},500)
+    return false
+  })
+} 
 
-            //锚点定位初始化
-            function bindEvenInit(){
-              $('.navbtn').bind("click touch",function () {
-                //scrollTop 滚动到  $(this).attr('href')锚点关联id所在位置
-                $('html,body').animate({scrollTop:($($(this).attr('href')).offset().top-100)},500)
-                return false
-              })
-            }
+            
+
+
 })()
 // 建议放在页面底部</body>标签前，或DOMContentLoaded事件中
 document.addEventListener('DOMContentLoaded', function() {
@@ -167,3 +170,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// 监听窗口的滚动事件
+window.addEventListener('scroll', function() {
+  // 获取左侧浮框元素
+  const meCard = document.querySelector('.content .me-card');
+  // 获取当前页面的滚动距离
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > 0) {
+      // 当页面滚动时，添加 scroll 类
+      meCard.classList.add('scroll');
+  } else {
+      // 当页面回到顶部时，移除 scroll 类
+      meCard.classList.remove('scroll');
+  }
+});
+

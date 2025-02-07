@@ -194,7 +194,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px; /* 新增：用gap替代margin控制间距 */
+  gap: 20px; 
 }
 
 .li4-box>div {
@@ -203,7 +203,6 @@
   flex: 0 0 calc(50% - 10px); /* 修正：考虑gap间距后的精确计算 */
   min-height: 250px;
   /* 移除：margin-bottom: 20px */
-  
 
   font-weight: 500;
   letter-spacing: .05em;
@@ -219,11 +218,12 @@
   position: relative;
   display: inline-block;
   color: var(--mainColor);
-  margin-top: 10px;
+  margin-top: 10px; /* 修正：原代码中 10x 应该是 10px */
   cursor: pointer;
   padding-right: 30px;
 }
-.li4-box>div a::after{
+
+.li4-box>div a::after {
   position: absolute;
   right: 10px;
   top: 50%;
@@ -236,13 +236,27 @@
   animation: bmove 1s infinite;
 }
 
-.li4-box svg path{
+.li4-box svg path {
   fill: var(--headerFont);
 }
+
 .li4icon {
   width: 45px;
   height: 45px;
 }
+
+/* 媒体查询：针对小屏幕设备 */
+@media (max-width: 950px) {
+  .li4-box>div {
+    flex: 0 0 100%; /* 让子元素在小屏幕上独占一行 */
+    margin-bottom: 20px; /* 添加底部间距 */
+  }
+  /* 最后一个子元素不添加底部间距 */
+  .li4-box>div:last-child {
+    margin-bottom: 0;
+  }
+}
+
 
 /* 第五  05  */
 .li5-box {
@@ -316,7 +330,7 @@ svg {
 
 }
 
-/* 第六个  06  */
+/* 第五个  05  */
 .content-li.li6 
 
 .li6-box {
@@ -327,14 +341,14 @@ svg {
 .li6-box a{
   display: block;
   color: var(--mainColor);
-  margin-top: 10px;
+  margin-top: 10x;
   cursor: pointer;
 }
 .li6-box>div {
   display: inline-block;
   overflow: hidden;
   flex: 0 0 48%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;  /*左右间距*/
 }
 
 .li6-box .borderbotm {
@@ -351,12 +365,26 @@ svg {
   margin-top: 0px;
 }
 .li6-box img{
-  transform: scale(1.1);
+  transform: scale(1.05);
   height: 100%;
   transition: all .3s ease-in-out;
 }
 .li6-box img:hover{
   transform: scale(1);
+}
+/* 媒体查询，当屏幕宽度小于 950px 时应用以下样式 */
+@media (max-width: 950px) {
+  .li6-box {
+    /* 将 flex 布局改为纵向排列 */
+    flex-direction: column;
+  }
+
+  .li6-box {
+    /* 让每个元素宽度占满父容器 */
+    flex: 0 0 100%;
+    /* 增加元素之间的间距 */
+    margin-bottom: 20px;
+  }
 }
 
 
