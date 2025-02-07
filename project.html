@@ -17,7 +17,7 @@
   <title>求职简历</title>
   <link rel="stylesheet" href="./css/base.css">
   <script src="./js/jq.js"></script>
-  <link rel="stylesheet" href="./css/other.css">
+  <link rel="stylesheet" href="./project.html">
 </head>
 
 <body>
@@ -28,7 +28,10 @@
     <div class="loading-div"></div>
   </div>
 
+
+  <!-- 主要页面 -->
   <div class="box">
+
     <!-- 顶部栏 -->
     <div class="header borderafter">
       <!-- 返回按钮 -->
@@ -40,6 +43,7 @@
             p-id="3738" fill="#254665"></path>
         </svg>
       </a>
+
 
       <div class="col">
         <span>个人简历</span>
@@ -55,11 +59,11 @@
             <ul class="header-nav">
               <li><a href="./index.html">主页</a></li>
               <li><a href="./works.html">摄影作品</a></li>
-              <li><a href="./project.html">项目</a></li>
-              <li><a href="./skill.html">经验</a></li>
+              <li class="active"><a href="./project.html">项目</a></li>
+              <li><a href="./skill.html">技能</a></li>
               <li><a href="./contact.html">联系</a></li>
               <li><a href="./experience.html">经验</a></li>
-              <li class="active"><a href="./other.html">其他</a></li>
+              <li><a href="./other.html">其他</a></li>
             </ul>
             <!-- 开关灯 -->
             <span class="kaig-bottm">
@@ -86,101 +90,51 @@
     </div>
 
     <!-- 顶部导航 -->
-    <div class="navigation">
-      <div class="nav-titleBox co zz">
-        <!-- 标题 -->
-        <div class="co-right">
-          <span class="titleBox-tag">Photo!</span>
-          <h1>
-            life is like a box of chocolates .
-          </h1>
-          <a class="buttom navbtn" href="#next-one">生活就像巧克力
-          </a>
-        </div>
-      </div>
-    </div>
 
     <!-- 主要修改部分 -->
-    <div class="content zz">
-      <!-- 主要内容部分 -->
-      <div id="next-one">
-        <div class="content-li li1">
-          <div class="li1-box borderbefore">
-            <span>Sports</span><span class="tag">25</span>
-            <div class="borderbotm"></div>
-            <p>运动</p>
+    <head>
+      <style>
+        .image-container { position: relative; box-sizing: border-box; }@media screen and (max-width: 1296px) { .image-container-canvas { width: 100%; } }
+        .image-container {
+        position: relative;
+        box-sizing: border-box;
+        margin: 0;
+        transform: translateY(60px); /* 让图片整体下移 50px，可根据需求调整 */}
+      </style>
+
+      <link rel="stylesheet" href="./css/project.css">
+      <title>可滑动图片网页</title>
+    </head>
+    
+    <body>
+        <div id="pc-tip">        建议在PC端观看
+ 或关闭方向旋转横屏观看</div>
+        <script src="./js/project.js"></script>
+        <div class="image-container">
+          <!-- 请将以下图片链接替换为你实际的图片链接 -->
+          <img src="./img/project/1.jpg" alt="Image 1">
+          <img src="./img/project/2.jpg" alt="Image 2">
+          <div class="image-with-button">
+             <img src="./img/project/3.jpg" alt="Image 3">
+             <a href="https://pan.baidu.com/s/1Buk9MfzgFMW4JEl-KqqhMQ?pwd=587m" class="play-button">点击播放</a>
           </div>
-          <div class="li1-box borderbefore">
-            <span>Foot</span><span class="tag">5</span>
-            <div class="borderbotm"></div>
-            <p>美食</p>
+          <div class="image-with-button">
+             <img src="./img/project/4.jpg" alt="Image 3">
+             <a href="https://pan.baidu.com/s/1rBzZN4IXVeRL-ZBYQ_vQyg?pwd=8ynh" class="play-button">点击播放</a>
           </div>
-          <div class="li1-box borderbefore">
-            <span>Travel</span><span class="tag">18</span>
-            <div class="borderbotm"></div>
-            <p>旅行</p>
-          </div>
+          <div class="image-with-button">
+             <img src="./img/project/5.jpg" alt="Image 3">
+             <a href="https://www.bilibili.com/video/BV1wQ4y1Y7LC" class="play-button">点击播放</a>
+          </div>          
         </div>
-        <div class="content-li li2">
-          <h3>
-            <span>生活精彩瞬间</span>
-            <div class="borderbotm"></div>
-            <span>02</span>
-          </h3>
-          <div class="li2-box">
-            <a class="li2-box-item carbox">
-              <img src="./img/pic1.jpg" alt="">
-              <div class="boxitem-title">
-                <h6>精彩瞬间</h6>
-                <span>地点：山西 晋城</span>
-              </div>
-            </a>
-            <a class="li2-box-item carbox" href="https://gitee.com/wttAndroid/book_admin">
-              <img src="./img/pic3.jpg" alt="">
-              <div class="boxitem-title">
-                <h6>精彩瞬间</h6>
-                <span>地点：山西 晋城</span>
-              </div>
-            </a>
-            <a class="li2-box-item carbox" href="https://wttandroid.gitee.io/wttandroid.github.io/">
-              <img src="./img/timg2.gif" alt="">
-              <div class="boxitem-title">
-                <h6>河南 影视城</h6>
-                <span>地点：河南 影视城</span>
-              </div>
-            </a>
-            <a class="li2-box-item carbox" href="https://gitee.com/wttAndroid/xyy_server">
-              <img src="./img/box4.gif" alt="">
-              <div class="boxitem-title">
-                <h6>洛阳牡丹</h6>
-                <span>地点：洛阳 牡丹园</span>
-              </div>
-            </a>
-            <a class="li2-box-item carbox" href="https://gitee.com/wttAndroid/xyy_server">
-              <img src="./img/box3.gif" alt="">
-              <div class="boxitem-title">
-                <h6>北京动物园</h6>
-                <span>地点：北京 动物园</span>
-              </div>
-            </a>
-            <a class="li2-box-item carbox" href="https://gitee.com/wttAndroid/xyy_server">
-              <img src="./img/box1.gif" alt="">
-              <div class="boxitem-title">
-                <h6>太原柳巷</h6>
-                <span>地点：太原 柳巷</span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="borderbotm"></div>
-        <div class="carbox copybottm">
-          ©2022 wttandroid
-        </div>
-      </div>
-    </div>
+      <script src="./js/project.js"></script>
+    </body>
+  </div>
 </body>
+
 <script src="./js/base.js"></script>
-<script type="text/javascript" src="./js/paper-full.min.js"></script>
-<script type="text/javascript" src="./js/canvas.js"></script>
+<script type="text/javascript" src="./js/project.js"></script>
+
+
 
 </html>
