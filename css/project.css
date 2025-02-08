@@ -94,7 +94,7 @@ body {
 
 
 /* 提示词的移动端竖屏的样式设置 */
-@media (orientation: portrait) and (max-width: 767px) {
+@media (orientation: portrait) and (max-width: 1100px) {
   #pc-tip {
       display: flex;
       justify-content: center;

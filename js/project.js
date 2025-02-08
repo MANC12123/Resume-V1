@@ -12,13 +12,13 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 // 检查是否是移动端竖屏
-const isMobilePortrait = window.matchMedia('(orientation: portrait) and (max-width: 767px)').matches;
+const isMobilePortrait = window.matchMedia('(orientation: portrait) and (max-width: 1100px)').matches;
 
 if (isMobilePortrait) {
     const tipElement = document.getElementById('pc-tip');
     // 原始提示文本
     const originalText = tipElement.textContent;
-    let countdown = 2;
+    let countdown = 3;
 
     // 显示提示
     tipElement.style.display = 'flex';
