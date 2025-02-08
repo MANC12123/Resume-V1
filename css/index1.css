@@ -337,6 +337,7 @@ svg {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 30px;
 }
 .li6-box a{
   display: block;
@@ -347,8 +348,8 @@ svg {
 .li6-box>div {
   display: inline-block;
   overflow: hidden;
-  flex: 0 0 48%;
-  margin-bottom: 30px;  /*左右间距*/
+  flex: 0 0 47%;
+  margin-bottom: 0px;  /*左右间距*/
 }
 
 .li6-box .borderbotm {
