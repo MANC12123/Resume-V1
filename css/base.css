@@ -551,6 +551,8 @@ img {
 
 
 /* 加载小蝴蝶 - 修正版 */
+
+/*
 .loading-wrap {
   position: fixed;
   left: 0;
@@ -562,6 +564,7 @@ img {
   opacity: 1;
   transition: opacity 0.3s ease;
 }
+*/
 
 /* 隐藏状态 */
 .loading-wrap.hide {
