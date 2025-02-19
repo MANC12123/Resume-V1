@@ -57,6 +57,69 @@
   margin: 15px 0 8px;
 }
 
+.li3-box {
+  position: relative;
+  /* 设置高度为 0，以便使用 padding 技巧 */
+  height: 0;
+  /* 按照 16:9 的比例，padding-top 为宽度的 56.25% */
+  padding-top: 56.25%; 
+  background-image: url("../img/Canon R7_x264 back.jpg");
+  background-size: 100%;
+}
+
+.li3-box > .play-buttom {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  background-color: var(--mainColor);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.play-buttom::after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  background-color: inherit;
+  border-radius: 50%;
+  animation: playbuttom 1s infinite;
+}
+
+@keyframes playbuttom {
+  from {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.play-buttom svg {
+  vertical-align: -13px;
+}
+
+/* 媒体查询，确保在不同屏幕尺寸下都生效 */
+@media (max-width: 950px) {
+  .li3-box {
+    height: 0;
+    padding-top: 66.67%; 
+  }
+}
+
 
 /* 当屏幕宽度小于1500px时，每行显示3个 */
 @media screen and (max-width: 1800px) {
