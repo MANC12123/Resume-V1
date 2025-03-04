@@ -40,10 +40,36 @@
       </svg></span>
     <div id="videoskill">
       <video id="videoskillC" controls="" name="media">
-        <source src="./img/Canon R7_x264.mp4" type="video/mp4">
       </video>
     </div>
   </div>
+
+  <script>
+    // 添加全局点击监听
+    document.addEventListener('click', function(e) {
+      // 点击播放按钮时
+      if (e.target.closest('.play-buttom')) {
+        const parentLi = e.target.closest('.content-li')
+        const videoSrc = parentLi.dataset.video // 获取自定义视频路径
+        const videoPlayer = document.getElementById('videoskillC')
+        
+        // 设置视频源
+        videoPlayer.innerHTML = `<source src="${videoSrc}" type="video/mp4">`
+        videoPlayer.load()
+        
+        // 显示遮罩层
+        document.getElementById('zhezhao').style.display = 'block'
+        videoPlayer.play()
+      }
+    
+      // 点击关闭按钮时
+      if (e.target.closest('.close')) {
+        const videoPlayer = document.getElementById('videoskillC')
+        videoPlayer.pause()
+        document.getElementById('zhezhao').style.display = 'none'
+      }
+    })
+    </script>
 
   <!-- 主要页面 -->
   <div class="box">
@@ -128,8 +154,49 @@
 
     <!-- 主要修改部分 -->
     <div class="content zz">
-      <!-- 右边 -->
       <div id="next-one">
+    <!-- 摄影作品 -->
+    <div class="content-li li4" data-video="./img/Canon R7_x264.mp4">
+      <h3>
+        <span>主摄创意片</span>
+        <br><br>
+        <span></span>
+      </h3>
+      
+      <div class="carbox li4-box">
+        <div class="play-buttom" id="playbuttom">
+          <span><svg t="1649146869552" class="icon" viewBox="-10 10 1024 1024" version="1.1"
+              xmlns="http://www.w3.org/2000/svg" p-id="20204" width="50" height="50">
+              <path d="M657.92 535.04l-256-160v320z" p-id="20205" data-spm-anchor-id="a313x.7781069.0.i27"
+                class="selected" fill="#ffffff"></path>
+            </svg></span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="content-li li5" data-video="./img/SONY WH1000XM3_x264.mp4">
+      <h3>
+        <span>创意产品广告</span>
+        <br><br>
+        <span></span>
+      </h3>
+      
+      <div class="carbox li5-box">
+        <div class="play-buttom" id="playbuttom">
+
+          <span><svg t="1649146869552" class="icon" viewBox="-10 10 1024 1024" version="1.1"
+              xmlns="http://www.w3.org/2000/svg" p-id="20204" width="50" height="50">
+              <path d="M657.92 535.04l-256-160v320z" p-id="20205" data-spm-anchor-id="a313x.7781069.0.i27"
+                class="selected" fill="#ffffff"></path>
+            </svg></span>
+        </div>
+      </div>
+    </div>
+      
+
+      <!-- 右边 -->
+      
+        <div class="borderbotm"></div>
         <div class="content-li li1">
           <div class="li1-box">
             <!-- 修改：去掉 a 标签，添加 data-src 属性用于存储原图路径 -->
@@ -168,7 +235,31 @@
             </div>
 
             <div class="li1-box-item carbox">
-              <img src="./img/works product/2024-4-11 531037.jpg" alt="" data-src="./img/works product/2024-4-11 531037.jpg">
+              <img src="./img/works product/Fire&ice 2.jpg" alt="" data-src="./img/works product/Fire&ice 2.jpg">
+              <div class="boxitem-title">
+                <h6>晋城职业技术学院508工作室</h6>
+                <span>508工作室</span>
+              </div>
+            </div>
+            
+            <div class="li1-box-item carbox">
+              <img src="./img/works product/Fire&ice 1.jpg" alt="" data-src="./img/works product/Fire&ice 1.jpg">
+              <div class="boxitem-title">
+                <h6>晋城职业技术学院508工作室</h6>
+                <span>508工作室</span>
+              </div>
+            </div>
+            
+            <div class="li1-box-item carbox">
+              <img src="./img/works product/2024-11-15 152037.jpg" alt="" data-src="./img/works product/2024-11-15 152037.jpg">
+              <div class="boxitem-title">
+                <h6>晋城职业技术学院508工作室</h6>
+                <span>508工作室</span>
+              </div>
+            </div>
+            
+            <div class="li1-box-item carbox">
+              <img src="./img/works product/2024-4-11 653137.jpg" alt="" data-src="./img/works product/2024-4-11 653137.jpg">
               <div class="boxitem-title">
                 <h6>晋城职业技术学院508工作室</h6>
                 <span>508工作室</span>
@@ -176,7 +267,23 @@
             </div>
 
             <div class="li1-box-item carbox">
-              <img src="./img/works product/2024-11-15 152037.jpg" alt="" data-src="./img/works product/2024-11-15 152037.jpg">
+              <img src="./img/works product/213463.jpg" alt="" data-src="./img/works product/213463.jpg">
+              <div class="boxitem-title">
+                <h6>晋城职业技术学院508工作室</h6>
+                <span>508工作室</span>
+              </div>
+            </div>
+
+            <div class="li1-box-item carbox">
+              <img src="./img/works product/2024-5-5 153267.jpg" alt="" data-src="./img/works product/2024-5-5 153267.jpg">
+              <div class="boxitem-title">
+                <h6>晋城职业技术学院508工作室</h6>
+                <span>508工作室</span>
+              </div>
+            </div>
+
+            <div class="li1-box-item carbox">
+              <img src="./img/works product/2024-4-11 531037.jpg" alt="" data-src="./img/works product/2024-4-11 531037.jpg">
               <div class="boxitem-title">
                 <h6>晋城职业技术学院508工作室</h6>
                 <span>508工作室</span>
@@ -190,40 +297,10 @@
                 <span>508工作室</span>
               </div>
             </div>
-
-            <div class="li1-box-item carbox">
-              <img src="./img/works product/2024-4-11 653137.jpg" alt="" data-src="./img/works product/2024-4-11 653137.jpg">
-              <div class="boxitem-title">
-                <h6>晋城职业技术学院508工作室</h6>
-                <span>508工作室</span>
-              </div>
-            </div>
-
           </div>
         </div>
         
         
-        <!-- 摄影作品 -->
-        <div class="content-li li3">
-          <h3>
-            <span>主摄创意片</span>
-            <div class="borderbotm"></div>
-            <span></span>
-          </h3>
-          
-          <div class="carbox li3-box">
-            <div class="play-buttom" id="playbuttom">
-
-              <span><svg t="1649146869552" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" p-id="20204" width="50" height="50">
-                  <path d="M657.92 535.04l-256-160v320z" p-id="20205" data-spm-anchor-id="a313x.7781069.0.i27"
-                    class="selected" fill="#ffffff"></path>
-                </svg></span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="borderbotm"></div>
         <div class="carbox copybottm">
           ©2025 Manc.
         </div>
