@@ -131,8 +131,8 @@
   /* 设置高度为 0，以便使用 padding 技巧 */
   height: 0;
   /* 按照 16:9 的比例，padding-top 为宽度的 56.25% */
-  padding-top: 56.25%; 
-  background-image: url("../img/videoback.jpg");
+  padding-top: 75%; 
+  background-image: url("../img/videoback.png");
   background-size: 100%;
 }
 
